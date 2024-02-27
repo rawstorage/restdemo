@@ -1,0 +1,929 @@
+{
+	"info": {
+		"_postman_id": "c81ceae4-ac6d-45e6-877c-c170f7b0cc48",
+		"name": "Unisphere for PowerMax Demo Edition REST API Endpoints",
+		"description": "REST API Calls for Unisphere for PowerMax Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1175162"
+	},
+	"item": [
+		{
+			"name": "Provisioning Storage with PowerMax REST API",
+			"item": [
+				{
+					"name": "1.List Connected Systems",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic c21jOnNtYw=="
+							}
+						],
+						"url": {
+							"raw": "https://launchpad:8444/univmax/restapi/{{API_VERSION}}/sloprovisioning/symmetrix",
+							"protocol": "https",
+							"host": [
+								"launchpad"
+							],
+							"port": "8444",
+							"path": [
+								"univmax",
+								"restapi",
+								"{{API_VERSION}}",
+								"sloprovisioning",
+								"symmetrix"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.Get System Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic c21jOnNtYw=="
+							}
+						],
+						"url": {
+							"raw": "https://{{IP}}:8444/univmax/restapi/{{API_VERSION}}/sloprovisioning/symmetrix/{{id}}",
+							"protocol": "https",
+							"host": [
+								"{{IP}}"
+							],
+							"port": "8444",
+							"path": [
+								"univmax",
+								"restapi",
+								"{{API_VERSION}}",
+								"sloprovisioning",
+								"symmetrix",
+								"{{id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.List Configured Storage Groups",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic c21jOnNtYw=="
+							}
+						],
+						"url": {
+							"raw": "https://{{IP}}:8444/univmax/restapi/{{API_VERSION}}/sloprovisioning/symmetrix/{{id}}/storagegroup",
+							"protocol": "https",
+							"host": [
+								"{{IP}}"
+							],
+							"port": "8444",
+							"path": [
+								"univmax",
+								"restapi",
+								"{{API_VERSION}}",
+								"sloprovisioning",
+								"symmetrix",
+								"{{id}}",
+								"storagegroup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4.Create A New Storage Group",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic c21jOnNtYw=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"srpId\": \"SRP_1\",\r\n  \"storageGroupId\": \"SG_SNAP\",\r\n  \"emulation\": \"FBA\",\r\n  \"sloBasedStorageGroupParam\": [\r\n    {\r\n      \"num_of_vols\": 2,\r\n      \"sloId\": \"Diamond\",\r\n      \"volumeIdentifier\": {\r\n        \"identifier_name\": \"vol_identifier\",\r\n        \"volumeIdentifierChoice\": \"identifier_name\"\r\n      },\r\n      \"volumeAttribute\": {\r\n        \"volume_size\": \"5\",\r\n        \"capacityUnit\": \"GB\"\r\n      }\r\n    }\r\n  ]\r\n}\r\n\r\n"
+						},
+						"url": {
+							"raw": "https://{{IP}}:8444/univmax/restapi/{{API_VERSION}}/sloprovisioning/symmetrix/{{id}}/storagegroup",
+							"protocol": "https",
+							"host": [
+								"{{IP}}"
+							],
+							"port": "8444",
+							"path": [
+								"univmax",
+								"restapi",
+								"{{API_VERSION}}",
+								"sloprovisioning",
+								"symmetrix",
+								"{{id}}",
+								"storagegroup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5.List  Configured  Hosts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic c21jOnNtYw=="
+							}
+						],
+						"url": {
+							"raw": "https://launchpad:8444/univmax/restapi/90/sloprovisioning/symmetrix/000197900049/host",
+							"protocol": "https",
+							"host": [
+								"launchpad"
+							],
+							"port": "8444",
+							"path": [
+								"univmax",
+								"restapi",
+								"90",
+								"sloprovisioning",
+								"symmetrix",
+								"000197900049",
+								"host"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6.List Configured Port Groups",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic c21jOnNtYw=="
+							}
+						],
+						"url": {
+							"raw": "https://launchpad:8444/univmax/restapi/90/sloprovisioning/symmetrix/000197900049/portgroup",
+							"protocol": "https",
+							"host": [
+								"launchpad"
+							],
+							"port": "8444",
+							"path": [
+								"univmax",
+								"restapi",
+								"90",
+								"sloprovisioning",
+								"symmetrix",
+								"000197900049",
+								"portgroup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "7.List Masking Views",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic c21jOnNtYw=="
+							}
+						],
+						"url": {
+							"raw": "https://{{IP}}:8444/univmax/restapi/{{API_VERSION}}/sloprovisioning/symmetrix/{{id}}/maskingview",
+							"protocol": "https",
+							"host": [
+								"{{IP}}"
+							],
+							"port": "8444",
+							"path": [
+								"univmax",
+								"restapi",
+								"{{API_VERSION}}",
+								"sloprovisioning",
+								"symmetrix",
+								"{{id}}",
+								"maskingview"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "8.Create Masking View",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic c21jOnNtYw=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"portGroupSelection\": {\r\n    \"useExistingPortGroupParam\": {\r\n      \"portGroupId\": \"Finance_PG\"\r\n    }\r\n  },\r\n  \"maskingViewId\": \"Finance_MV\",\r\n  \"hostOrHostGroupSelection\": {\r\n    \"useExistingHostParam\": {\r\n      \"hostId\": \"Build_Server_IG\"\r\n    }\r\n  },\r\n  \"storageGroupSelection\": {\r\n    \"useExistingStorageGroupParam\": {\r\n      \"storageGroupId\": \"BusIntApp\"\r\n    }\r\n  }\r\n}\r\n"
+						},
+						"url": {
+							"raw": "https://{{IP}}:8444/univmax/restapi/{{API_VERSION}}/sloprovisioning/symmetrix/{{id}}/maskingview",
+							"protocol": "https",
+							"host": [
+								"{{IP}}"
+							],
+							"port": "8444",
+							"path": [
+								"univmax",
+								"restapi",
+								"{{API_VERSION}}",
+								"sloprovisioning",
+								"symmetrix",
+								"{{id}}",
+								"maskingview"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "9.List Masking Views Copy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic c21jOnNtYw=="
+							}
+						],
+						"url": {
+							"raw": "https://{{IP}}:8444/univmax/restapi/{{API_VERSION}}/sloprovisioning/symmetrix/{{id}}/maskingview",
+							"protocol": "https",
+							"host": [
+								"{{IP}}"
+							],
+							"port": "8444",
+							"path": [
+								"univmax",
+								"restapi",
+								"{{API_VERSION}}",
+								"sloprovisioning",
+								"symmetrix",
+								"{{id}}",
+								"maskingview"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "10.Expand SG Volume",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic c21jOnNtYw=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"editStorageGroupActionParam\": {\r\n    \"expandStorageGroupParam\": {\r\n      \"expandVolumesParam\": {\r\n        \"allVolumeParam\": {\r\n          \"volumeAttribute\": {\r\n            \"volume_size\": \"1\",\r\n            \"capacityUnit\": \"GB\"\r\n          }\r\n        }\r\n      }\r\n    }\r\n  }\r\n}\r\n\r\n\r\n"
+						},
+						"url": {
+							"raw": "https://{{IP}}:8444/univmax/restapi/{{API_VERSION}}/sloprovisioning/symmetrix/{{id}}/storagegroup/{{storage_group_id}}",
+							"protocol": "https",
+							"host": [
+								"{{IP}}"
+							],
+							"port": "8444",
+							"path": [
+								"univmax",
+								"restapi",
+								"{{API_VERSION}}",
+								"sloprovisioning",
+								"symmetrix",
+								"{{id}}",
+								"storagegroup",
+								"{{storage_group_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Creating Snapshots",
+			"item": [
+				{
+					"name": "1.Create SG Snapshot",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic c21jOnNtYw=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"timeToLive\": 1,\r\n  \"snapshotName\": \"REST_TEST_Snap_1\",\r\n  \"timeInHours\": true\r\n}\r\n"
+						},
+						"url": {
+							"raw": "https://{{IP}}:8444/univmax/restapi/{{API_VERSION}}/replication/symmetrix/{{id}}/storagegroup/{{storage_group_id}}/snapshot",
+							"protocol": "https",
+							"host": [
+								"{{IP}}"
+							],
+							"port": "8444",
+							"path": [
+								"univmax",
+								"restapi",
+								"{{API_VERSION}}",
+								"replication",
+								"symmetrix",
+								"{{id}}",
+								"storagegroup",
+								"{{storage_group_id}}",
+								"snapshot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.List SG Snapshots",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic c21jOnNtYw=="
+							}
+						],
+						"url": {
+							"raw": "https://launchpad:8444/univmax/restapi/90/replication/symmetrix/000197900049/storagegroup/REST_TEST/snapshot",
+							"protocol": "https",
+							"host": [
+								"launchpad"
+							],
+							"port": "8444",
+							"path": [
+								"univmax",
+								"restapi",
+								"90",
+								"replication",
+								"symmetrix",
+								"000197900049",
+								"storagegroup",
+								"REST_TEST",
+								"snapshot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.Link Snapshot",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic c21jOnNtYw=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"link\": {\r\n    \"linkStorageGroupName\": {{Link_Storage_Group_name}}\r\n  },\r\n  \"action\": \"Link\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "https://{{IP}}:8444/univmax/restapi/{{API_VERSION}}/replication/symmetrix/{{id}}/storagegroup/{{storage_group_id}}/snapshot/{{snapshot_name}}/generation/0",
+							"protocol": "https",
+							"host": [
+								"{{IP}}"
+							],
+							"port": "8444",
+							"path": [
+								"univmax",
+								"restapi",
+								"{{API_VERSION}}",
+								"replication",
+								"symmetrix",
+								"{{id}}",
+								"storagegroup",
+								"{{storage_group_id}}",
+								"snapshot",
+								"{{snapshot_name}}",
+								"generation",
+								"0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Managing and Monitoring Remote Replication",
+			"item": [
+				{
+					"name": "1.List SRDF SGs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic c21jOnNtYw=="
+							}
+						],
+						"url": {
+							"raw": "https://{{IP}}:8444/univmax/restapi/{{API_VERSION}}/replication/symmetrix/{{id}}/storagegroup?hasSrdf=true",
+							"protocol": "https",
+							"host": [
+								"{{IP}}"
+							],
+							"port": "8444",
+							"path": [
+								"univmax",
+								"restapi",
+								"{{API_VERSION}}",
+								"replication",
+								"symmetrix",
+								"{{id}}",
+								"storagegroup"
+							],
+							"query": [
+								{
+									"key": "hasSrdf",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.Protect SG with SRDF",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Basic c21jOnNtYw=="
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"replicationMode\": \"Synchronous\",\r\n  \"remoteSymmId\": \"000296800647\",\r\n  \"remoteStorageGroupName\": \"REST_TEST\",\r\n  \"establish\": true\r\n}\r\n"
+						},
+						"url": {
+							"raw": "https://{{IP}}:8444/univmax/restapi/{{API_VERSION}}/replication/symmetrix/{{id}}/storagegroup/[{{storage_group_id}}/rdf_group",
+							"protocol": "https",
+							"host": [
+								"{{IP}}"
+							],
+							"port": "8444",
+							"path": [
+								"univmax",
+								"restapi",
+								"{{API_VERSION}}",
+								"replication",
+								"symmetrix",
+								"{{id}}",
+								"storagegroup",
+								"[{{storage_group_id}}",
+								"rdf_group"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PowerMax Enhanced API Calls",
+			"item": [
+				{
+					"name": "1.List Performance Categories and Metrics For Array",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{IP}}:8444/univmax/rest/v1/systems/{id}/performance-categories",
+							"protocol": "https",
+							"host": [
+								"{{IP}}"
+							],
+							"port": "8444",
+							"path": [
+								"univmax",
+								"rest",
+								"v1",
+								"systems",
+								"{id}",
+								"performance-categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2.GET SRP Performance Metrics",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{IP}}:8444/univmax/rest/v1/systems/{id}/performance-categories/SRP",
+							"protocol": "https",
+							"host": [
+								"{{IP}}"
+							],
+							"port": "8444",
+							"path": [
+								"univmax",
+								"rest",
+								"v1",
+								"systems",
+								"{id}",
+								"performance-categories",
+								"SRP"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.Get Metrics for all active Host Initiator",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{IP}}:8444/univmax/rest/v1/systems/{id}/performance-categories/Initiator",
+							"protocol": "https",
+							"host": [
+								"{{IP}}"
+							],
+							"port": "8444",
+							"path": [
+								"univmax",
+								"rest",
+								"v1",
+								"systems",
+								"{id}",
+								"performance-categories",
+								"Initiator"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4.Get Metrics for all BE Directors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{IP}}:8444/univmax/rest/v1/systems/{id}/performance-categories/BEDirector",
+							"protocol": "https",
+							"host": [
+								"{{IP}}"
+							],
+							"port": "8444",
+							"path": [
+								"univmax",
+								"rest",
+								"v1",
+								"systems",
+								"{id}",
+								"performance-categories",
+								"BEDirector"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5.Enhanced Volumes Call",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{IP}}:8444/univmax/rest/v1/systems/{{id}}/volumes?select=id,resource_type,cap_gb,type,status,num_of_storage_groups,storage_groups.id,storage_groups.resource_type&filter=num_of_storage_groups eq 1",
+							"protocol": "https",
+							"host": [
+								"{{IP}}"
+							],
+							"port": "8444",
+							"path": [
+								"univmax",
+								"rest",
+								"v1",
+								"systems",
+								"{{id}}",
+								"volumes"
+							],
+							"query": [
+								{
+									"key": "select",
+									"value": "id,resource_type,cap_gb,type,status,num_of_storage_groups,storage_groups.id,storage_groups.resource_type"
+								},
+								{
+									"key": "filter",
+									"value": "num_of_storage_groups eq 1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6.Enhanced Storage Group Call",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{IP}}:8444/univmax/rest/v1/systems/{{id}}/storage-groups?select=id,resource_type,volume_emulation,srp,srp.id,srp.resource_type,num_of_volumes,cap_gb,volumes,volumes.id",
+							"protocol": "https",
+							"host": [
+								"{{IP}}"
+							],
+							"port": "8444",
+							"path": [
+								"univmax",
+								"rest",
+								"v1",
+								"systems",
+								"{{id}}",
+								"storage-groups"
+							],
+							"query": [
+								{
+									"key": "select",
+									"value": "id,resource_type,volume_emulation,srp,srp.id,srp.resource_type,num_of_volumes,cap_gb,volumes,volumes.id"
+								},
+								{
+									"key": "filter",
+									"value": "id eq Customer_Billing",
+									"disabled": true
+								},
+								{
+									"key": "filter",
+									"value": "num_of_volumes gt 1",
+									"disabled": true
+								},
+								{
+									"key": "filter",
+									"value": "cap_gb gt 1024",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "smc",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "smc",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_VERSION",
+			"value": "101",
+			"type": "string"
+		},
+		{
+			"key": "ENHANCED_API_VERSION",
+			"value": "V1",
+			"type": "string"
+		},
+		{
+			"key": "id",
+			"value": "000120200107",
+			"type": "string"
+		},
+		{
+			"key": "IP",
+			"value": "localhost",
+			"type": "string"
+		},
+		{
+			"key": "categories",
+			"value": "[BEDirector,Initiator,SRP]",
+			"type": "string"
+		},
+		{
+			"key": "category_id",
+			"value": ""
+		},
+		{
+			"key": "collectionVariableName",
+			"value": ""
+		},
+		{
+			"key": "category",
+			"value": ""
+		},
+		{
+			"key": "storage_group_id",
+			"value": "REST_TEST"
+		},
+		{
+			"key": "snapshot_name",
+			"value": "REST_TEST_Snap_1"
+		},
+		{
+			"key": "Link_Storage_Group_name",
+			"value": "\"REST_TEST_Snap_1_SG\""
+		}
+	]
+}
